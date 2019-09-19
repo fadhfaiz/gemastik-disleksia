@@ -15,7 +15,13 @@
     <!-- pake punya insan -->
     <script src="https://kit.fontawesome.com/98f1a0cbdc.js"></script>
 </head>
-
+<style>
+ .center {
+            margin: auto;
+            width: 60%;
+            padding: 50px;
+        }
+</style>
 <body>
     <nav class="no-shadows">
         <div class="nav-wrapper top-navbar">
@@ -31,21 +37,21 @@
             <div class="col s12 m6">
                 <div class="card darken-1 hoverable kartu-radius" style="height:500px !important;">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="img/a.png">
+                        <img class="activator center" id ="ubah" src="img/a.png" style="width:95% !important">
                     </div>
                     <div class="row center-align" style="margin-top:20px">
-                        <div class="col s3"><a href="latihan.html" onclick="ujicoba()"
+                        <div class="col s3"><a href="#!" onclick="ujicoba()"
                                 class="waves-effect waves-light btn-large"
                                 style="font-size: 20px; font-weight: bold;background-color: #ee6e73">A</a></div>
-                        <div class="col s3"><a href="latihan.html" onclick="ujicoba()"
+                        <div class="col s3"><a href="#!" onclick="ujicoba()"
                                 class="waves-effect waves-light btn-large"
                                 style="font-size: 20px; font-weight: bold;background-color: #ee6e73">Z</a></div>
-                        <div class="col s3"><a href="latihan.html" onclick="ujicoba()"
+                        <div class="col s3"><a href="#!" onclick="ujicoba()"
                                 class="waves-effect waves-light btn-large"
                                 style="font-size: 20px; font-weight: bold;background-color: #ee6e73">N</a></div>
-                        <div class="col s3"><a href="latihan.html" onclick="ujicoba()"
+                        <div class="col s3"><button onclick="ujicoba()"
                                 class="waves-effect waves-light btn-large"
-                                style="font-size: 20px; font-weight: bold;background-color: #ee6e73">B</a></div>
+                                style="font-size: 20px; font-weight: bold;background-color: #ee6e73">B</button></div>
                     </div>
                 </div>
             </div>
@@ -96,8 +102,10 @@
         });
     </script>
     <script>
-        function ujicoba() {
-
+        function ujicoba(event) {
+            document.getElementById("ubah").src = "img/n.png";
+            event.preventDefault();
+            
         }
     </script>
 </body>
