@@ -48,22 +48,22 @@
         <div class="row py-1">
             <div class="col s12 m6">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator center" id ="ubah" src="img/a.png" style="width:55% !important">
+                        <img class="activator center" id ="ubah" src="img/a.png" style="width:55% !important; height: 245px !important">
                         <p class="lead">Huruf apa yang kamu lihat di atas?</p>
                     </div>
                     <div class="row center-align" style="margin-top:20px">
-                        <div class="col s6"><a href="#!" onclick="ujicoba()"
+                        <div class="col s6"><a href="#!" onclick="huruf()"
                                 class="waves-effect waves-light btn-large center1"
                                 style="font-size: 30px; font-weight: bold;background-color: white; color: grey; width: 180px; height:100px;">A</a></div>
-                        <div class="col s6"><a href="#!" onclick="ujicoba()"
+                        <div class="col s6"><a href="#!" onclick="hurufempat()"
                                 class="waves-effect waves-light btn-large center1"
                                 style="font-size: 30px; font-weight: bold;background-color: white; color: grey ; width: 180px; height:100px;">Z</a></div>
                         </div>
                         <div class="row center-align" style="margin-top:20px">
-                        <div class="col s6"><a href="#!" onclick="ujicoba()"
+                        <div class="col s6"><a href="#!" onclick="angka()"
                                 class="waves-effect waves-light btn-large center1"
                                 style="font-size: 30px; font-weight: bold;background-color: white; color: grey; width: 180px; height:100px;">N</a></div>
-                        <div class="col s6"><button onclick="ujicoba()"
+                        <div class="col s6"><button onclick="angka()"
                                 class="waves-effect waves-light btn-large center1"
                                 style="font-size: 30px; font-weight: bold;background-color: white; color: grey; width: 180px; height:100px;">B</button></div>
                         </div>
@@ -116,10 +116,19 @@
         });
     </script>
     <script>
-        function ujicoba(event) {
+        function huruf(event) {
             document.getElementById("ubah").src = "img/n.png";
             event.preventDefault();
             
+        }
+        function hurufempat(event) {
+            document.getElementById("ubah").src = "img/dadi.png";
+            event.preventDefault();
+            
+        }
+        function angka(event){
+            document.getElementById("ubah").src = "img/8.png";
+            event.preventDefault(); 
         }
     </script>
 </body>
