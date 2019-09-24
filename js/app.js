@@ -1,5 +1,5 @@
 let quiz = {
-  images: ['A.jpg', 'N.jpg'],
+  images: ['a.png', 'n.png'],
   questions: ['Huruf apa yang kamu lihat diatas ?', 'Huruf apa yang kamu lihat diatas ?'],
   answers: [
     ['A', 'D', 'B', 'C'],
@@ -17,6 +17,10 @@ class App {
 
   setNomor(value) {
     this.soal = value;
+  }
+
+  soalSelanjutnya() {
+    this.soal++;
   }
 
   getNomor() {

@@ -7,13 +7,25 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+<img src="" alt="" id="gambar" onclick="ubahGambar()">
 
 <body>
   <script src="app.js"></script>
   <script>
     let app = new App();
     let soal = app.getQuiz()
+
     console.log(soal);
+
+    let gambar = document.getElementById('gambar');
+    gambar.setAttribute('src', `../dist/img/${soal.images}`);
+
+    const ubahGambar = () => {
+      app.soalSelanjutnya();
+      let x = app.getQuiz();
+
+      gambar.setAttribute('src', `../dist/img/${x.images}`);
+    }
   </script>
 </body>
 
