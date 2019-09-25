@@ -51,27 +51,30 @@
         <div class="row py-1">
             <div class="col s12 m6">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator center" id="ubah" src="img/a.png"
-                        style="width:55% !important; height: 245px !important">
-                    <p class="lead">Huruf apa yang kamu lihat di atas?</p>
+                    <img class="activator center" id="gambar" style="width:55% !important; height: 245px !important">
+                    <p class="lead" id="soal"></p>
                 </div>
                 <div class="row center-align" style="margin-top:20px">
                     <div class="col s6"><a href="#!" onclick="jawab(0)"
                             class="waves-effect waves-light btn-large center1"
-                            style="font-size: 30px; font-weight: bold;background-color: white; color: grey; width: 180px; height:100px;">A</a>
+                            style="font-size: 30px; font-weight: bold;background-color: white; color: grey; width: 180px; height:100px;"
+                            id="opsiA"></a>
                     </div>
                     <div class="col s6"><a href="#!" onclick="jawab(1)"
                             class="waves-effect waves-light btn-large center1"
-                            style="font-size: 30px; font-weight: bold;background-color: white; color: grey ; width: 180px; height:100px;">Z</a>
+                            style="font-size: 30px; font-weight: bold;background-color: white; color: grey ; width: 180px; height:100px;"
+                            id="opsiB"></a>
                     </div>
                 </div>
                 <div class="row center-align" style="margin-top:20px">
                     <div class="col s6"><a href="#!" onclick="jawab(2)"
                             class="waves-effect waves-light btn-large center1"
-                            style="font-size: 30px; font-weight: bold;background-color: white; color: grey; width: 180px; height:100px;">N</a>
+                            style="font-size: 30px; font-weight: bold;background-color: white; color: grey; width: 180px; height:100px;"
+                            id="opsiC"></a>
                     </div>
                     <div class="col s6"><button onclick="jawab(3)" class="waves-effect waves-light btn-large center1"
-                            style="font-size: 30px; font-weight: bold;background-color: white; color: grey; width: 180px; height:100px;">B</button>
+                            style="font-size: 30px; font-weight: bold;background-color: white; color: grey; width: 180px; height:100px;"
+                            id="opsiD"></button>
                     </div>
                 </div>
 
@@ -125,7 +128,21 @@
         let app = new App();
         var soal = app.getQuiz();
 
-        // console.log(soal);
+        var gambar = document.getElementById('gambar');
+        var pertanyaan = document.getElementById('soal');
+
+        var opsiA = document.getElementById('opsiA');
+        var opsiB = document.getElementById('opsiB');
+        var opsiC = document.getElementById('opsiC');
+        var opsiD = document.getElementById('opsiD');
+
+        gambar.setAttribute('src', `img/${soal.images}`);
+        pertanyaan.innerText = soal.question;
+
+        opsiA.innerHTML = soal.answers[0];
+        opsiB.innerHTML = soal.answers[1];
+        opsiC.innerHTML = soal.answers[2];
+        opsiD.innerHTML = soal.answers[3];
 
         let jawab = (opsi) => {
             var x = new App();
@@ -137,7 +154,7 @@
             x.soalSelanjutnya();
         }
     </script>
-    <script>
+    <!-- <script>
         function huruf(event) {
             document.getElementById("ubah").src = "img/n.png";
             event.preventDefault();
@@ -154,7 +171,7 @@
             document.getElementById("ubah").src = "img/8.png";
             event.preventDefault();
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

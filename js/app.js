@@ -1,11 +1,12 @@
 let quiz = {
-  images: ['a.png', 'n.png'],
-  questions: ['Huruf apa yang kamu lihat diatas ?', 'Huruf apa yang kamu lihat diatas ?'],
+  images: ['a.png', 'n.png', 'akecil.PNG'],
+  questions: ['Huruf apa yang kamu lihat diatas ?', 'Huruf apa yang kamu lihat diatas ?', 'Huruf apa yang kamu lihat diatas ?'],
   answers: [
     ['A', 'D', 'B', 'C'],
-    ['N', 'O', 'Q', 0]
+    ['N', 'O', 'Q', 0],
+    ['o', 'O', 'd', 'a']
   ],
-  correctAnswer: ['A', 'N']
+  correctAnswer: ['A', 'N', 'a']
 }
 
 class App {
