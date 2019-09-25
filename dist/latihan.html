@@ -51,8 +51,9 @@
         <div class="row py-1">
             <div class="col s12 m6">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator center" id="gambar" style="width:55% !important; height: 245px !important">
-                    <p class="lead" id="soal"></p>
+                    <img class="activator center" id="ubah" src="img/a.png"
+                        style="width:55% !important; height: 245px !important">
+                    <p class="lead">Huruf apa yang kamu lihat di atas?</p>
                 </div>
                 <div class="row center-align" style="margin-top:20px">
                     <div class="col s6">
@@ -133,21 +134,7 @@
         var app = new App();
         var soal = app.getQuiz();
 
-        var gambar = document.getElementById('gambar');
-        var pertanyaan = document.getElementById('soal');
-
-        var opsiA = document.getElementById('opsiA');
-        var opsiB = document.getElementById('opsiB');
-        var opsiC = document.getElementById('opsiC');
-        var opsiD = document.getElementById('opsiD');
-
-        gambar.setAttribute('src', `img/${soal.images}`);
-        pertanyaan.innerText = soal.question;
-
-        opsiA.innerHTML = soal.answers[0];
-        opsiB.innerHTML = soal.answers[1];
-        opsiC.innerHTML = soal.answers[2];
-        opsiD.innerHTML = soal.answers[3];
+        // console.log(soal);
 
         function jawab(opsi) {
 
@@ -177,7 +164,7 @@
             opsiD.innerHTML = soal.answers[3];
         }
     </script>
-    <!-- <script>
+    <script>
         function huruf(event) {
             document.getElementById("ubah").src = "img/n.png";
             event.preventDefault();
@@ -194,7 +181,7 @@
             document.getElementById("ubah").src = "img/8.png";
             event.preventDefault();
         }
-    </script> -->
+    </script>
 </body>
 
 </html>
