@@ -56,22 +56,31 @@
                     <p class="lead">Huruf apa yang kamu lihat di atas?</p>
                 </div>
                 <div class="row center-align" style="margin-top:20px">
-                    <div class="col s6"><a href="#!" onclick="jawab(0)"
-                            class="waves-effect waves-light btn-large center1"
-                            style="font-size: 30px; font-weight: bold;background-color: white; color: grey; width: 180px; height:100px;">A</a>
+                    <div class="col s6">
+                        <button onclick="jawab(0)" class="waves-effect waves-light btn-large center1"
+                            style="font-size: 30px; font-weight: bold;background-color: white; color: grey; width: 180px; height:100px;"
+                            id="opsiA">
+                        </button>
                     </div>
-                    <div class="col s6"><a href="#!" onclick="jawab(1)"
-                            class="waves-effect waves-light btn-large center1"
-                            style="font-size: 30px; font-weight: bold;background-color: white; color: grey ; width: 180px; height:100px;">Z</a>
+                    <div class="col s6">
+                        <button onclick="jawab(1)" class="waves-effect waves-light btn-large center1"
+                            style="font-size: 30px; font-weight: bold;background-color: white; color: grey ; width: 180px; height:100px;"
+                            id="opsiB">
+                        </button>
                     </div>
                 </div>
                 <div class="row center-align" style="margin-top:20px">
-                    <div class="col s6"><a href="#!" onclick="jawab(2)"
-                            class="waves-effect waves-light btn-large center1"
-                            style="font-size: 30px; font-weight: bold;background-color: white; color: grey; width: 180px; height:100px;">N</a>
+                    <div class="col s6">
+                        <button onclick="jawab(2)" class="waves-effect waves-light btn-large center1"
+                            style="font-size: 30px; font-weight: bold;background-color: white; color: grey; width: 180px; height:100px;"
+                            id="opsiC">
+                        </button>
                     </div>
-                    <div class="col s6"><button onclick="jawab(3)" class="waves-effect waves-light btn-large center1"
-                            style="font-size: 30px; font-weight: bold;background-color: white; color: grey; width: 180px; height:100px;">B</button>
+                    <div class="col s6">
+                        <button onclick="jawab(3)" class="waves-effect waves-light btn-large center1"
+                            style="font-size: 30px; font-weight: bold;background-color: white; color: grey; width: 180px; height:100px;"
+                            id="opsiD">
+                        </button>
                     </div>
                 </div>
 
@@ -122,19 +131,37 @@
             $('.sidenav').sidenav();
         });
 
-        let app = new App();
+        var app = new App();
         var soal = app.getQuiz();
 
         // console.log(soal);
 
-        let jawab = (opsi) => {
-            var x = new App();
-            var soal = x.getQuiz();
+        function jawab(opsi) {
 
-            console.log(opsi);
-            console.log(soal.answers[opsi])
+            if (window.soal.correctAnswer == window.soal.answers[opsi]) {
+                console.log('benar');
+            } else {
+                console.log('salah');
+            }
 
-            x.soalSelanjutnya();
+            window.app.soalSelanjutnya();
+            window.soal = app.getQuiz();
+
+            var gambar = document.getElementById('gambar');
+            var pertanyaan = document.getElementById('soal');
+
+            var opsiA = document.getElementById('opsiA');
+            var opsiB = document.getElementById('opsiB');
+            var opsiC = document.getElementById('opsiC');
+            var opsiD = document.getElementById('opsiD');
+
+            gambar.setAttribute('src', `img/${soal.images}`);
+            pertanyaan.innerText = soal.question;
+
+            opsiA.innerHTML = soal.answers[0];
+            opsiB.innerHTML = soal.answers[1];
+            opsiC.innerHTML = soal.answers[2];
+            opsiD.innerHTML = soal.answers[3];
         }
     </script>
     <script>

@@ -37,12 +37,17 @@ class App {
   }
 
   getQuiz() {
+    if (!quiz.images[this.soal]) {
+      this.soal = 0;
+    }
+
     let obj = {
       images: quiz.images[this.soal],
       question: quiz.questions[this.soal],
       answers: quiz.answers[this.soal],
       correctAnswer: quiz.correctAnswer[this.soal]
     }
+
     return obj;
   }
 }
