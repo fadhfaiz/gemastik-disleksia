@@ -37,7 +37,7 @@ class App {
   }
 
   getQuiz() {
-    if (!quiz.images[this.soal]) {
+    if (!quiz.images[this.soal] || this.soal != 0) {
       this.soal = 0;
     }
 
